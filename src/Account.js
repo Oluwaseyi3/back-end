@@ -15,10 +15,11 @@ import styles from "./styles/FormStyles";
 
     const { userData} = useContext(UserContext);
     const { classes } = props;
-    const [fileData, setFileData] = useState();
+    const [fileData, setFileData] = useState("");
     const [images, setFile] = useState("");
 
     const handleFileChange= ({target}) => {
+     
       setFileData(target.files[0])
       setFile(target.value);
     }
@@ -29,7 +30,7 @@ import styles from "./styles/FormStyles";
 
     formdata.append("image", fileData)
 
-    await Axios.post("http://localhost:5000/users/image", formdata)
+    await Axios.post("http://localhost:5000/api/image", formdata)
       .then((res) => console.log("res", res.data))
       
       .catch((error) => console.log(error))

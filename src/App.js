@@ -9,7 +9,7 @@ import Login from "./Login.js"
 
 import Register from "./Register.js"
 import ButtonAppBar from "./Navbar.js"
-import Account from "./Account.js"
+
 
 
 function App() {
@@ -54,7 +54,7 @@ function App() {
     <>
    <UserContext.Provider value={{userData, setUserData}}>
     <ButtonAppBar/>
-    
+ 
      <Switch>
        <Route exact path="/" render={() => <Home/>}/>
        <Route exact path="/Login" render={() => <Login/>}/>

@@ -15,9 +15,8 @@ app.use(
      extended: true
     })
 )
+
 app.use(express.urlencoded({ extended: true}))
-
-
 
 
 
@@ -27,14 +26,24 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING, {
     useCreateIndex: true
 }, (err) => {
     if (err) throw err
-    console.log("MongoDB Connected");
+    console.log("MongoDB1 Connected");
 })
+
+
+
 
 
 const PORT = process.env.PORT || 5000;
 
 
+
+
 app.listen(PORT, () => console.log(`The Server has started on port: ${PORT}`));
 
 
+
+
 app.use("/users", require("./routes/userRouter"))
+
+app.use("/api", require("./routes/uploadImageRouter") )
+

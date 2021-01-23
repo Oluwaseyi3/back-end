@@ -115,10 +115,6 @@ router.post("/register", async (req, res) => {
       id: user._id
     });
   })
-const {UploadImage} =require("../controller/uploadImage.js")
 
-const parser = require("../middleWare/cloudinary.config.js")
-
-router.post("/image", parser.single("image"), UploadImage)
 
 module.exports=router

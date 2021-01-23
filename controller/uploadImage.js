@@ -1,10 +1,12 @@
-const ImageSchema = require("../models/userModel.js")
+const { json } = require("express");
+const ImageSchema = require("../models/fileUpload")
 
 module.exports.UploadImage = async (req, res) => {
     const imageUploaded = new ImageSchema({
-        image: req.file.path
+        image: req.file.path,
+        
     })
-
+    console.log(req.file);
     try{
         await imageUploaded.save();
     } catch (error){

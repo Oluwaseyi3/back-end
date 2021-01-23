@@ -20,9 +20,14 @@ const storage = new CloudinaryStorage({
     params: {
         folder: "folder name",
         format: async () => "png",
-        public_id: (req, file) => file.filename,
+        public_id: (req, file) => file.filename
+        
     }
-})
+    
+}) 
+
+
+
 
 const parser = multer({ storage: storage})
 
